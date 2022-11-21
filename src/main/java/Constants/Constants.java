@@ -1,7 +1,7 @@
 package Constants;
 
 public class Constants {
-    public static final String EXPECTED_PAYMENT = "Сколько это стоит? И как оплатить?";
+    public static final String EXPECTED_PAYMENT = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
     public static final String EXPECTED_AMOUNT = "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.";
     public static final String EXPECTED_RENTAL_TIME = "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.";
     public static final String EXPECTED_ORDER_TODAY = "Только начиная с завтрашнего дня. Но скоро станем расторопнее.";

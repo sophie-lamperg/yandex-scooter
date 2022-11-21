@@ -7,13 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
+public class HomePage extends ObjectPage {
 
-    WebDriver driver;
+    //WebDriver driver;
 
-    HomePage(WebDriver driver) {
-        this.driver = driver;
-    }
     public static String URL = "https://qa-scooter.praktikum-services.ru/";
 
     //logo & order-button in header
@@ -31,9 +28,9 @@ public class HomePage {
     private final By orderNotFound = By.xpath(".//img[@alt='Not found']");
 
     //accordion-menu
-    private final By accordionMenu = By.className("Home_FAQ__3uVm4");
+    private final By accordionMenu = By.className("Home_FourPart__1uthg");
 
-    private final By expectedPayment = By.id("accordion__heading-8");
+    private final By expectedPayment = By.id("accordion__heading-0");
     private final By expectedAmount = By.id("accordion__heading-9");
     private final By expectedRentalTime = By.id("accordion__heading-10");
     private final By expectedOrderToday = By.id("accordion__heading-11");
@@ -50,21 +47,31 @@ public class HomePage {
     private final By expectedChargerText = By.id("accordion__panel-5");
     private final By expectedCancellationText = By.id("accordion__panel-6");
     private final By expectedCoverageZoneText = By.id("accordion__panel-7");
+
+
+    public HomePage(WebDriver driver) {
+        super(driver);
+        driver.get(URL);
+    }
     //scroll
     public void scrollDown() {
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", accordionMenu);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(accordionMenu));
     };
-
+    //ожидание
     public void waitElement(WebElement element) {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.elementToBeClickable(element));
     };
+    //функции для обработки меню-аккордиона
     public String getExpectedPayment() {
-        scrollDown();
-       driver.findElement(expectedPayment).click();
-       WebElement element = driver.findElement(expectedPaymentText);
-       waitElement(element);
-       return element.getText();
+       WebElement element = driver.findElement(expectedPayment);
+       if (element.isDisplayed()) {
+           element.click();
+           WebElement text = driver.findElement(expectedPaymentText);
+           waitElement(text);
+           return text.getText();
+       }
+        return null;
     };
 
     public String getExpectedAmount() {

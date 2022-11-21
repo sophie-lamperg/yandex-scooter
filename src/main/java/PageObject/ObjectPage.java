@@ -7,6 +7,4 @@ public class ObjectPage {
     public ObjectPage(WebDriver driver) {
         this.driver = driver;
     }
-
-//    public Object open();
 }
