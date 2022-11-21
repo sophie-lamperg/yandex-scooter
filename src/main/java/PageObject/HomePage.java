@@ -31,13 +31,13 @@ public class HomePage extends ObjectPage {
     private final By accordionMenu = By.className("Home_FourPart__1uthg");
 
     private final By expectedPayment = By.id("accordion__heading-0");
-    private final By expectedAmount = By.id("accordion__heading-9");
-    private final By expectedRentalTime = By.id("accordion__heading-10");
-    private final By expectedOrderToday = By.id("accordion__heading-11");
-    private final By expectedExtendOrder = By.id("accordion__heading-12");
-    private final By expectedCharger = By.id("accordion__heading-13");
-    private final By expectedCancellation = By.id("accordion__heading-14");
-    private final By expectedCoverageZone = By.id("accordion__heading-15");
+    private final By expectedAmount = By.id("accordion__heading-1");
+    private final By expectedRentalTime = By.id("accordion__heading-2");
+    private final By expectedOrderToday = By.id("accordion__heading-3");
+    private final By expectedExtendOrder = By.id("accordion__heading-4");
+    private final By expectedCharger = By.id("accordion__heading-5");
+    private final By expectedCancellation = By.id("accordion__heading-6");
+    private final By expectedCoverageZone = By.id("accordion__heading-7");
 
     private final By expectedPaymentText = By.id("accordion__panel-0");
     private final By expectedAmountText = By.id("accordion__panel-1");
@@ -65,17 +65,13 @@ public class HomePage extends ObjectPage {
     //функции для обработки меню-аккордиона
     public String getExpectedPayment() {
        WebElement element = driver.findElement(expectedPayment);
-       if (element.isDisplayed()) {
            element.click();
            WebElement text = driver.findElement(expectedPaymentText);
            waitElement(text);
            return text.getText();
-       }
-        return null;
     };
 
     public String getExpectedAmount() {
-        scrollDown();
         driver.findElement(expectedAmount).click();
         WebElement element = driver.findElement(expectedAmountText);
         waitElement(element);
@@ -83,7 +79,6 @@ public class HomePage extends ObjectPage {
     };
 
     public String getExpectedRentalTime() {
-        scrollDown();
         driver.findElement(expectedRentalTime).click();
         WebElement element = driver.findElement(expectedRentalTimeText);
         waitElement(element);
@@ -91,7 +86,6 @@ public class HomePage extends ObjectPage {
     };
 
     public String getExpectedOrderToday() {
-        scrollDown();
         driver.findElement(expectedOrderToday).click();
         WebElement element = driver.findElement(expectedOrderTodayText);
         waitElement(element);
@@ -99,7 +93,6 @@ public class HomePage extends ObjectPage {
     };
 
     public String getExpectedExtendOrder() {
-        scrollDown();
         driver.findElement(expectedExtendOrder).click();
         WebElement element = driver.findElement(expectedExtendOrderText);
         waitElement(element);
