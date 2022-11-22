@@ -40,6 +40,7 @@ public class OrderPage extends ObjectPage {
     private final By comment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
     private final By orderModal = By.className("Order_Modal__YZ-d3");
     private final By yesButton = By.xpath(".//button[contains(@class, 'Button_Button__ra12g Button_Middle__1CSJM') and contains(text(), 'Да')]");
+    private final By status = By.xpath(".//div[contains(@class,'Order_ModalHeader') and text()='Заказ оформлен']");
     public void scrollDown() {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(contentOrderButton));
     };
@@ -92,6 +93,10 @@ public class OrderPage extends ObjectPage {
         waitElement(driver.findElement(yesButton));
         driver.findElement(yesButton).click();
     }
+    public void setStatus() {
+        waitElement(driver.findElement(status));
+        driver.findElement(status).isDisplayed();
+    }
     public void setFields() {
         waitElement(driver.findElement(nameInput));
         setName("София");
@@ -107,5 +112,6 @@ public class OrderPage extends ObjectPage {
         setComment("Privet");
         clickOnNextButton();
         clickOnYesButton();
+        setStatus();
     }
 }
