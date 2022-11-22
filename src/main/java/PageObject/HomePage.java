@@ -13,8 +13,7 @@ public class HomePage extends ObjectPage {
 
     public static String URL = "https://qa-scooter.praktikum-services.ru/";
 
-    //logo & order-button in header
-    private final By headerOrderButton = By.xpath(".//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
+    //logo in header
     private final By headerLogo = By.className("Header_Logo__23yGT");
     private final By headerLogoYandex = By.className("Header_LogoYandex__3TSOI");
     private final By headerLogoScooter = By.className("Header_LogoScooter__3lsAR");
@@ -100,7 +99,6 @@ public class HomePage extends ObjectPage {
     };
 
     public String getExpectedCharger() {
-        scrollDown();
         driver.findElement(expectedCharger).click();
         WebElement element = driver.findElement(expectedChargerText);
         waitElement(element);
@@ -108,7 +106,6 @@ public class HomePage extends ObjectPage {
     };
 
     public String getExpectedCancellation() {
-        scrollDown();
         driver.findElement(expectedCancellation).click();
         WebElement element = driver.findElement(expectedCancellationText);
         waitElement(element);
@@ -116,7 +113,6 @@ public class HomePage extends ObjectPage {
     };
 
     public String getExpectedCoverageZone() {
-        scrollDown();
         driver.findElement(expectedCoverageZone).click();
         WebElement element = driver.findElement(expectedCoverageZoneText);
         waitElement(element);
