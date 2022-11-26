@@ -60,65 +60,59 @@ public class HomePage extends ObjectPage {
                 .until(ExpectedConditions.elementToBeClickable(element));
     };
     //функции для обработки меню-аккордиона
-    public String getExpectedPayment() {
-       WebElement element = driver.findElement(expectedPayment);
-           element.click();
-           WebElement text = driver.findElement(expectedPaymentText);
-           waitElement(text);
-           return text.getText();
+    public WebElement getExpectedPayment() {
+       return driver.findElement(expectedPayment);
+    };
+    public WebElement getExpectedPaymentText() {
+       return driver.findElement(expectedPaymentText);
     };
 
-    public String getExpectedAmount() {
-        driver.findElement(expectedAmount).click();
-        WebElement element = driver.findElement(expectedAmountText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedAmount() {
+       return driver.findElement(expectedAmount);
     };
 
-    public String getExpectedRentalTime() {
-        driver.findElement(expectedRentalTime).click();
-        WebElement element = driver.findElement(expectedRentalTimeText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedAmountText() {
+        return driver.findElement(expectedAmountText);
     };
 
-    public String getExpectedOrderToday() {
-        driver.findElement(expectedOrderToday).click();
-        WebElement element = driver.findElement(expectedOrderTodayText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedRentalTime() {
+       return driver.findElement(expectedRentalTime);
     };
 
-    public String getExpectedExtendOrder() {
-        driver.findElement(expectedExtendOrder).click();
-        WebElement element = driver.findElement(expectedExtendOrderText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedRentalTimeText() {
+        return driver.findElement(expectedRentalTimeText);
+    }
+    public WebElement getExpectedOrderToday() {
+        return driver.findElement(expectedOrderToday);
+    };
+    public WebElement getExpectedOrderTodayText() {
+        return driver.findElement(expectedOrderTodayText);
+    }
+    public WebElement getExpectedExtendOrder() {
+       return driver.findElement(expectedExtendOrder);
     };
 
-    public String getExpectedCharger() {
-        driver.findElement(expectedCharger).click();
-        WebElement element = driver.findElement(expectedChargerText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedExtendOrderText() {
+        return driver.findElement(expectedExtendOrderText);
+    }
+    public WebElement getExpectedCharger() {
+       return driver.findElement(expectedCharger);
+    };
+    public WebElement getExpectedChargerText() {
+       return driver.findElement(expectedChargerText);
     };
 
-    public String getExpectedCancellation() {
-        driver.findElement(expectedCancellation).click();
-        WebElement element = driver.findElement(expectedCancellationText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedCancellation() {
+       return driver.findElement(expectedCancellation);
+    };
+    public WebElement getExpectedCancellationText() {
+       return driver.findElement(expectedCancellationText);
     };
 
-    public String getExpectedCoverageZone() {
-        driver.findElement(expectedCoverageZone).click();
-        WebElement element = driver.findElement(expectedCoverageZoneText);
-        waitElement(element);
-        return element.getText();
+    public WebElement getExpectedCoverageZone() {
+        return driver.findElement(expectedCoverageZone);
     };
-    public void clickOnScooterLogo() {
-        WebElement element = driver.findElement(headerLogoScooter);
-        waitElement(element);
-        element.click();
+    public WebElement getExpectedCoverageZoneText() {
+        return driver.findElement(expectedCoverageZoneText);
     };
 }

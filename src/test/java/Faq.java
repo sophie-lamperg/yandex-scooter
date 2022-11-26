@@ -2,6 +2,7 @@ import PageObject.HomePage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,35 +19,58 @@ public class Faq extends Main {
 
     @Test
     public void checkExpectedPayment() {
-
-        Assert.assertEquals(EXPECTED_PAYMENT, page.getExpectedPayment());
+       page.getExpectedPayment().click();
+       WebElement text = page.getExpectedPaymentText();
+       page.waitElement(text);
+       Assert.assertEquals(EXPECTED_PAYMENT, text.getText());
     }
     @Test
     public void checkExpectedAmount() {
-        Assert.assertEquals(EXPECTED_AMOUNT, page.getExpectedAmount());
+        page.getExpectedAmount().click();
+        WebElement text = page.getExpectedAmountText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_AMOUNT, text.getText());
     }
     @Test
     public void checkExpectedRentalTime() {
-        Assert.assertEquals(EXPECTED_RENTAL_TIME, page.getExpectedRentalTime());
+        page.getExpectedRentalTime().click();
+        WebElement text = page.getExpectedRentalTimeText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_RENTAL_TIME, text.getText());
     }
     @Test
     public void checkExpectedOrderToday() {
-        Assert.assertEquals(EXPECTED_ORDER_TODAY, page.getExpectedOrderToday());
+        page.getExpectedOrderToday().click();
+        WebElement text = page.getExpectedOrderTodayText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_ORDER_TODAY, text.getText());
     }
     @Test
     public void checkExpectedExtendOrder() {
-        Assert.assertEquals(EXPECTED_EXTEND_ORDER, page.getExpectedExtendOrder());
+        page.getExpectedExtendOrder().click();
+        WebElement text = page.getExpectedExtendOrderText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_EXTEND_ORDER, text.getText());
     }
     @Test
     public void checkExpectedCharger() {
-        Assert.assertEquals(EXPECTED_CHARGER, page.getExpectedCharger());
+        page.getExpectedCharger().click();
+        WebElement text = page.getExpectedChargerText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_CHARGER, text.getText());
     }
     @Test
     public void checkExpectedCancellation() {
-        Assert.assertEquals(EXPECTED_CANCELLATION, page.getExpectedCancellation());
+        page.getExpectedCancellation().click();
+        WebElement text = page.getExpectedCancellationText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_CANCELLATION, text.getText());
     }
     @Test
     public void checkExpectedCoverageZone() {
-        Assert.assertEquals(EXPECTED_COVERAGE_ZONE, page.getExpectedCoverageZone());
+        page.getExpectedCoverageZone().click();
+        WebElement text = page.getExpectedCoverageZoneText();
+        page.waitElement(text);
+        Assert.assertEquals(EXPECTED_COVERAGE_ZONE, text.getText());
     }
 }
