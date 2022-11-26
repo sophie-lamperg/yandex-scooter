@@ -18,6 +18,7 @@ public class Faq extends Main {
 
     @Test
     public void checkExpectedPayment() {
+
         Assert.assertEquals(EXPECTED_PAYMENT, page.getExpectedPayment());
     }
     @Test

@@ -12,12 +12,10 @@ public class HomePage extends ObjectPage {
     //WebDriver driver;
 
     public static String URL = "https://qa-scooter.praktikum-services.ru/";
-
-    //logo in header
+    //logo
     private final By headerLogo = By.className("Header_Logo__23yGT");
     private final By headerLogoYandex = By.className("Header_LogoYandex__3TSOI");
     private final By headerLogoScooter = By.className("Header_LogoScooter__3lsAR");
-
     //status order
     private final By headerStatusOrder = By.className("Header_Link__1TAG7");
     private final By headerInputOrder = By.className("Input_Input__1iN_Z Header_Input__xIoUq");
@@ -117,5 +115,10 @@ public class HomePage extends ObjectPage {
         WebElement element = driver.findElement(expectedCoverageZoneText);
         waitElement(element);
         return element.getText();
+    };
+    public void clickOnScooterLogo() {
+        WebElement element = driver.findElement(headerLogoScooter);
+        waitElement(element);
+        element.click();
     };
 }
