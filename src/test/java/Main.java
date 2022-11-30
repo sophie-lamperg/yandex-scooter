@@ -15,12 +15,12 @@ public class Main {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-    @Before
-    public void setFirefoxDriver() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
+//    @Before
+//    public void setFirefoxDriver() {
+//        WebDriverManager.firefoxdriver().setup();
+//        driver = new FirefoxDriver();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    }
 
     @After
     public void teardown() {
